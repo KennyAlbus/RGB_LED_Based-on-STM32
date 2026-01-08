@@ -1,9 +1,26 @@
-#include "pwm_drv.h"
+#include "pwm.h"
+#include "led_drv.h"
 
 
 
 #define          PMW_DUTY_MAX              (100)
-#define          DUTY_STEP_VALUE           (2)
+#define          DUTY_STEP_VALUE           (5)
+
+
+
+void Bsp_Led_Timer_Handler(void)
+{
+  static uint8_t bsp_flag;
+	bsp_flag = !bsp_flag;
+	if(bsp_flag)
+	{
+	  Bsp_Led_On();
+	}
+	else
+	{
+	  Bsp_Led_Off();
+	}
+}
 
 void Duty_Cycle_Set(void)
 {

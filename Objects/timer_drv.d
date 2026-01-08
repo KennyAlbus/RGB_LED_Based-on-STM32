@@ -1,4 +1,4 @@
-.\objects\timer_drv.o: Drivers\timer_drv.c
+.\objects\timer_drv.o: Peripheral\timer_drv.c
 .\objects\timer_drv.o: .\Arm\stm32f10x.h
 .\objects\timer_drv.o: .\Arm\core_cm3.h
 .\objects\timer_drv.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
@@ -28,4 +28,4 @@
 .\objects\timer_drv.o: .\StdLib_Drivers\stm32f10x_usart.h
 .\objects\timer_drv.o: .\StdLib_Drivers\stm32f10x_wwdg.h
 .\objects\timer_drv.o: .\StdLib_Drivers\misc.h
-.\objects\timer_drv.o: Drivers\led_drv.h
+.\objects\timer_drv.o: .\Drivers\led_drv.h

@@ -1,4 +1,4 @@
-.\objects\systick.o: Drivers\systick.c
+.\objects\systick.o: Peripheral\systick.c
 .\objects\systick.o: .\Arm\stm32f10x.h
 .\objects\systick.o: .\Arm\core_cm3.h
 .\objects\systick.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

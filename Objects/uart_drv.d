@@ -1,4 +1,4 @@
-.\objects\uart_drv.o: Drivers\uart_drv.c
+.\objects\uart_drv.o: Peripheral\uart_drv.c
 .\objects\uart_drv.o: .\Arm\stm32f10x.h
 .\objects\uart_drv.o: .\Arm\core_cm3.h
 .\objects\uart_drv.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
@@ -28,6 +28,6 @@
 .\objects\uart_drv.o: .\StdLib_Drivers\stm32f10x_usart.h
 .\objects\uart_drv.o: .\StdLib_Drivers\stm32f10x_wwdg.h
 .\objects\uart_drv.o: .\StdLib_Drivers\misc.h
-.\objects\uart_drv.o: Drivers\timer_drv.h
-.\objects\uart_drv.o: Drivers\uart_drv.h
+.\objects\uart_drv.o: Peripheral\timer_drv.h
+.\objects\uart_drv.o: Peripheral\uart_drv.h
 .\objects\uart_drv.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

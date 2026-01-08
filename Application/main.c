@@ -1,17 +1,21 @@
 #include <stdio.h>
 #include "stm32f10x.h"   
 #include "systick.h"
+#include "pwm.h"
+#include "dma.h"
 #include "timer_drv.h"
 #include "uart_drv.h"
 #include "led_drv.h"
-#include "pwm_drv.h"
 #include "app_led.h"
 
 
 #define     UART_BAUDRATE             (115200)
 #define     TASK_NUM_MAX              (2)
+#define     BUFFER_SIZE_MAX           (256)
 
-
+/*****   Global Varible    *****/
+//uint16_t g_array0[BUFFER_SIZE_MAX];
+//uint16_t g_array1[BUFFER_SIZE_MAX];
 
 
 typedef struct
@@ -24,7 +28,7 @@ typedef struct
 
 static task_info_t task_list[TASK_NUM_MAX] = 
 {
-  {0,0,0,Timx_CNT_Get},
+  {500,500,0,Bsp_Led_Timer_Handler},
 	{50,50,0,Duty_Cycle_Set},
 	//add your task here.
 };
@@ -94,6 +98,9 @@ static void Driver_Init(void)
 	Timer_Drv_Init();
   Led_Drv_Init();
 	Rgb_Pwm_Init();
+	Led_Pwm_Init();
+	//Dma_Drv_Init((uint32_t )g_array0,(uint32_t )g_array1,BUFFER_SIZE_MAX);
+	
 	printf("%s\n",__func__);
 }
 

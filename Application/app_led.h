@@ -3,6 +3,8 @@
 
 #include <stdint.h>
 
+
+void Bsp_Led_Timer_Handler(void);
 void Duty_Cycle_Set(void);
 
 #endif

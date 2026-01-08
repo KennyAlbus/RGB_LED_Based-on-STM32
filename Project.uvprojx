@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\Application;.\Arm;.\Drivers;.\StdLib_Drivers</IncludePath>
+              <IncludePath>.\Application;.\Arm;.\Drivers;.\StdLib_Drivers;.\Peripheral</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -405,24 +405,39 @@
               <FilePath>.\Drivers\led_drv.c</FilePath>
             </File>
             <File>
-              <FileName>uart_drv.c</FileName>
+              <FileName>ws2812b_drv.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Drivers\uart_drv.c</FilePath>
+              <FilePath>.\Drivers\ws2812b_drv.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Peripheral</GroupName>
+          <Files>
+            <File>
+              <FileName>systick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Peripheral\systick.c</FilePath>
             </File>
             <File>
               <FileName>timer_drv.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Drivers\timer_drv.c</FilePath>
+              <FilePath>.\Peripheral\timer_drv.c</FilePath>
             </File>
             <File>
-              <FileName>systick.c</FileName>
+              <FileName>uart_drv.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Drivers\systick.c</FilePath>
+              <FilePath>.\Peripheral\uart_drv.c</FilePath>
             </File>
             <File>
-              <FileName>pwm_drv.c</FileName>
+              <FileName>pwm.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Drivers\pwm_drv.c</FilePath>
+              <FilePath>.\Peripheral\pwm.c</FilePath>
+            </File>
+            <File>
+              <FileName>dma.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Peripheral\dma.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -29,9 +29,10 @@
 .\objects\main.o: .\StdLib_Drivers\stm32f10x_usart.h
 .\objects\main.o: .\StdLib_Drivers\stm32f10x_wwdg.h
 .\objects\main.o: .\StdLib_Drivers\misc.h
-.\objects\main.o: .\Drivers\systick.h
-.\objects\main.o: .\Drivers\timer_drv.h
-.\objects\main.o: .\Drivers\uart_drv.h
+.\objects\main.o: .\Peripheral\systick.h
+.\objects\main.o: .\Peripheral\pwm.h
+.\objects\main.o: .\Peripheral\dma.h
+.\objects\main.o: .\Peripheral\timer_drv.h
+.\objects\main.o: .\Peripheral\uart_drv.h
 .\objects\main.o: .\Drivers\led_drv.h
-.\objects\main.o: .\Drivers\pwm_drv.h
 .\objects\main.o: Application\app_led.h
