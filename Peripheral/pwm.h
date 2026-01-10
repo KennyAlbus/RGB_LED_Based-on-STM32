@@ -4,9 +4,15 @@
 #include <stdint.h>
 
 
+enum
+{
+	PWM_CLOSE = 0,
+  PWM_START = 1,
+};
 
 /*Timer3 pwm function*/
-void Led_Duty_Set(uint16_t duty);
+void Pwm_Cmd(uint8_t state);
+void Pwm_Duty_Set(uint16_t duty);
 void Led_Pwm_Init(void);
 
 /*Timer2 pwm function*/

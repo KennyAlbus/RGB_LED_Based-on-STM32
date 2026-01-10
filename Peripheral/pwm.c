@@ -53,8 +53,29 @@ void Led_Pwm_Init(void)
 	tim_ocinitstructure.TIM_OCPolarity = TIM_OCPolarity_High;
 	tim_ocinitstructure.TIM_OutputState = TIM_OutputState_Enable;
 	TIM_OC1Init(TIM3,&tim_ocinitstructure);
-	TIM_OC1PreloadConfig(TIM3,TIM_OCPreload_Enable);
-	TIM_Cmd(TIM3,ENABLE);
+	//TIM_OC1PreloadConfig(TIM3,TIM_OCPreload_Enable);
+	TIM_DMAConfig(TIM3,TIM_DMABase_CCR1,TIM_DMABurstLength_1Transfer);
+	TIM_DMACmd(TIM3,TIM_DMA_CC1,ENABLE);
+	TIM_Cmd(TIM3,DISABLE);
+}
+
+/**
+  * @brief  Enable or Disable PWM in Tim3.
+  * @param  state:This parameter can be one of the following values:
+    * @arg    0  :close timer3.
+              1  :start timer3
+  * @retval None
+  */
+void Pwm_Cmd(uint8_t state)
+{
+  if(state)
+	{
+	  TIM_Cmd(TIM3,ENABLE);
+	}
+	else
+	{
+	  TIM_Cmd(TIM3,DISABLE);
+	}
 }
 
 /**
@@ -63,10 +84,14 @@ void Led_Pwm_Init(void)
     * @arg    LED_GREEN  :select the green led.
   * @retval None
   */
-void Led_Duty_Set(uint16_t duty)
+void Pwm_Duty_Set(uint16_t duty)
 {
   TIM_SetCompare1(TIM3,duty);
 }
+
+
+
+
 
 /**
   * @brief  Specified duty_cycle of led.

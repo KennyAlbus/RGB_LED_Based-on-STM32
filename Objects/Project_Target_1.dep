@@ -1,6 +1,6 @@
 Dependencies for Project 'Project', Target 'Target_1': (DO NOT MODIFY !)
 CompilerVersion: 5060750::V5.06 update 6 (build 750)::.\ARMCC
-F (.\Application\main.c)(0x695F5819)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Application -I .\Arm -I .\Drivers -I .\StdLib_Drivers -I .\Peripheral-ID:\Keil_v5\Packs\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\Application\main.c)(0x696270B1)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Application -I .\Arm -I .\Drivers -I .\StdLib_Drivers -I .\Peripheral-ID:\Keil_v5\Packs\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9B3488)
 I (.\Arm\stm32f10x.h)(0x4D783CB4)
 I (.\Arm\core_cm3.h)(0x4D523B58)
@@ -31,14 +31,14 @@ I (.\StdLib_Drivers\stm32f10x_usart.h)(0x4D783BB4)
 I (.\StdLib_Drivers\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\StdLib_Drivers\misc.h)(0x4D783BB4)
 I (.\Peripheral\systick.h)(0x6946B426)
-I (.\Peripheral\pwm.h)(0x695F557E)
-I (.\Peripheral\dma.h)(0x695F5819)
+I (.\Peripheral\pwm.h)(0x696270B1)
+I (.\Peripheral\dma.h)(0x696276AC)
 I (.\Peripheral\timer_drv.h)(0x6944045A)
 I (.\Peripheral\uart_drv.h)(0x67218D64)
 I (.\Drivers\led_drv.h)(0x694565C6)
 I (Application\app_led.h)(0x694FF186)
 F (.\Application\app_led.c)(0x695E07EB)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Application -I .\Arm -I .\Drivers -I .\StdLib_Drivers -I .\Peripheral-ID:\Keil_v5\Packs\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\app_led.o --omf_browse .\objects\app_led.crf --depend .\objects\app_led.d)
-I (.\Peripheral\pwm.h)(0x695F557E)
+I (.\Peripheral\pwm.h)(0x696270B1)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3487)
 I (.\Drivers\led_drv.h)(0x694565C6)
 I (.\StdLib_Drivers\stm32f10x_gpio.h)(0x4D783BB4)
@@ -98,7 +98,7 @@ I (.\StdLib_Drivers\stm32f10x_usart.h)(0x4D783BB4)
 I (.\StdLib_Drivers\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\StdLib_Drivers\misc.h)(0x4D783BB4)
 I (Drivers\led_drv.h)(0x694565C6)
-F (.\Drivers\ws2812b_drv.c)(0x695E0737)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Application -I .\Arm -I .\Drivers -I .\StdLib_Drivers -I .\Peripheral-ID:\Keil_v5\Packs\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\ws2812b_drv.o --omf_browse .\objects\ws2812b_drv.crf --depend .\objects\ws2812b_drv.d)
+F (.\Drivers\ws2812b_drv.c)(0x696276AC)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Application -I .\Arm -I .\Drivers -I .\StdLib_Drivers -I .\Peripheral-ID:\Keil_v5\Packs\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\ws2812b_drv.o --omf_browse .\objects\ws2812b_drv.crf --depend .\objects\ws2812b_drv.d)
 I (.\Arm\stm32f10x.h)(0x4D783CB4)
 I (.\Arm\core_cm3.h)(0x4D523B58)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3487)
@@ -127,6 +127,8 @@ I (.\StdLib_Drivers\stm32f10x_tim.h)(0x4D783BB4)
 I (.\StdLib_Drivers\stm32f10x_usart.h)(0x4D783BB4)
 I (.\StdLib_Drivers\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\StdLib_Drivers\misc.h)(0x4D783BB4)
+I (.\Peripheral\pwm.h)(0x696270B1)
+I (.\Peripheral\dma.h)(0x696276AC)
 F (.\Peripheral\systick.c)(0x69476961)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Application -I .\Arm -I .\Drivers -I .\StdLib_Drivers -I .\Peripheral-ID:\Keil_v5\Packs\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\systick.o --omf_browse .\objects\systick.crf --depend .\objects\systick.d)
 I (.\Arm\stm32f10x.h)(0x4D783CB4)
 I (.\Arm\core_cm3.h)(0x4D523B58)
@@ -219,7 +221,7 @@ I (.\StdLib_Drivers\misc.h)(0x4D783BB4)
 I (Peripheral\timer_drv.h)(0x6944045A)
 I (Peripheral\uart_drv.h)(0x67218D64)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9B3488)
-F (.\Peripheral\pwm.c)(0x695F557E)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Application -I .\Arm -I .\Drivers -I .\StdLib_Drivers -I .\Peripheral-ID:\Keil_v5\Packs\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\pwm.o --omf_browse .\objects\pwm.crf --depend .\objects\pwm.d)
+F (.\Peripheral\pwm.c)(0x696270B1)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Application -I .\Arm -I .\Drivers -I .\StdLib_Drivers -I .\Peripheral-ID:\Keil_v5\Packs\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\pwm.o --omf_browse .\objects\pwm.crf --depend .\objects\pwm.d)
 I (.\Arm\stm32f10x.h)(0x4D783CB4)
 I (.\Arm\core_cm3.h)(0x4D523B58)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3487)
@@ -250,7 +252,7 @@ I (.\StdLib_Drivers\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\StdLib_Drivers\misc.h)(0x4D783BB4)
 I (.\Drivers\led_drv.h)(0x694565C6)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9B3488)
-F (.\Peripheral\dma.c)(0x695F5D0F)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Application -I .\Arm -I .\Drivers -I .\StdLib_Drivers -I .\Peripheral-ID:\Keil_v5\Packs\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\dma.o --omf_browse .\objects\dma.crf --depend .\objects\dma.d)
+F (.\Peripheral\dma.c)(0x696276AC)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\Application -I .\Arm -I .\Drivers -I .\StdLib_Drivers -I .\Peripheral-ID:\Keil_v5\Packs\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="542" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\dma.o --omf_browse .\objects\dma.crf --depend .\objects\dma.d)
 I (.\Arm\stm32f10x.h)(0x4D783CB4)
 I (.\Arm\core_cm3.h)(0x4D523B58)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3487)

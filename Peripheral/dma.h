@@ -4,7 +4,8 @@
 #include <stdint.h>
 
 
-void Dma_Transfer_Trigger(uint16_t buffer_size);
-void Dma_Drv_Init(uint32_t src_addr,uint32_t dst_addr,uint16_t buffer_size);
+void Dma_IrqCb_set(void(*p_func0)(void));
+void Dma_Transfer_Trigger(uint16_t NumberOfData);
+void Dma_Configuration(uint32_t src_addr);
 
 #endif
