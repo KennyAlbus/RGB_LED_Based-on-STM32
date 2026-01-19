@@ -20,6 +20,7 @@ static void Tim3_Config(void)
 	timebase_initstructure.TIM_CounterMode = TIM_CounterMode_Up;
 	timebase_initstructure.TIM_Period = 90 - 1;
 	TIM_TimeBaseInit(TIM3,&timebase_initstructure);
+	TIM_ARRPreloadConfig(TIM3,ENABLE);
 }
 
 /**
@@ -53,7 +54,7 @@ void Led_Pwm_Init(void)
 	tim_ocinitstructure.TIM_OCPolarity = TIM_OCPolarity_High;
 	tim_ocinitstructure.TIM_OutputState = TIM_OutputState_Enable;
 	TIM_OC1Init(TIM3,&tim_ocinitstructure);
-	//TIM_OC1PreloadConfig(TIM3,TIM_OCPreload_Enable);
+	TIM_OC1PreloadConfig(TIM3,TIM_OCPreload_Enable);
 	TIM_DMAConfig(TIM3,TIM_DMABase_CCR1,TIM_DMABurstLength_1Transfer);
 	TIM_DMACmd(TIM3,TIM_DMA_CC1,ENABLE);
 	TIM_Cmd(TIM3,DISABLE);

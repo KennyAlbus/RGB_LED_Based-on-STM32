@@ -20,7 +20,7 @@ void Dma_IrqCb_set(void(*p_func0)(void))
   */
 void Dma_Transfer_Trigger(uint16_t NumberOfData)
 {
-	printf("ready to transfer...\r\n");
+	//printf("ready to transfer...\r\n");
   DMA_Cmd(DMA_TRANSFER_CHANNEL,DISABLE);
 	DMA_SetCurrDataCounter(DMA_TRANSFER_CHANNEL,NumberOfData);
 	DMA_Cmd(DMA_TRANSFER_CHANNEL,ENABLE);

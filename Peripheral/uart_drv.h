@@ -5,7 +5,7 @@
 
 
 
-
+// void Print_RandNum_timer_handler(void);
 void uart_drv_init(uint32_t baudrate);
 
 #endif

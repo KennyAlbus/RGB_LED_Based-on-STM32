@@ -2,6 +2,8 @@
 #include "timer_drv.h"
 #include "uart_drv.h"
 #include <stdio.h>
+#include <stdlib.h>
+
 
 
 
@@ -27,10 +29,18 @@ typedef struct
 static uart_HwInfo_t m_uart_info = {USART1,GPIO_Pin_9,GPIO_Pin_10};
 
 
-//static void Print_Info_timer_handler(void)
-//{
-//	printf("timer driver successful!!\r\n");
-//}
+
+// void Print_RandNum_timer_handler(void)
+// {
+// 	printf("0x%x\r\n",RAND_MAX);
+// 	uint32_t randNum;
+// 	for(uint8_t i = 0;i < 3;i++)
+// 	{
+// 		randNum = rand();
+// 		printf("%d:%d\r\n",i+1,randNum);
+// 	}
+// 	printf("\r\n");
+// }
 
 static void uart_gpio_init(void)
 {

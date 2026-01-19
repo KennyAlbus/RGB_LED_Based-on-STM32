@@ -1,6 +1,8 @@
 #include "stm32f10x.h"
 #include "pwm.h"
 #include "dma.h"
+#include <stdio.h>
+
 
 
 #define          WS2812B_LED_QUANTITY          (60)
@@ -10,7 +12,20 @@ uint16_t g_ws2812b_bit[TRANSFER_DATA_LENGTH];
 uint8_t g_ws2812b_Tc_flag;
 
 
-
+//void _print_buf(void)
+//{
+//  if(!g_ws2812b_Tc_flag)
+//	{
+//	  for(uint8_t i = 0;i < TRANSFER_DATA_LENGTH;i++)
+//		{
+//		  printf("buf:%d ",g_ws2812b_bit[i]);
+//			if((i+1)%8 == 0)
+//			{
+//			  printf("\r\n");
+//			}
+//		}
+//	}
+//}
 /**
   * @brief  called by DMA1_Channel6 Interrupt after data transfer complete one time.
   * @param  None.
@@ -51,8 +66,8 @@ void Ws2812b_SetBuf(uint32_t color)
 
 
 /**
-  * @brief  Transfer data format in g_ws2812b_buf[](01010101...) to 
-	          g_ws2812b_bit[](30 60 60 30 60...),then start transmit 
+  * @brief  Transfer data format from g_ws2812b_buf[](01010101...) to 
+	          g_ws2812b_bit[](30 60 60 30 60...),then start transmitting 
 						through DMA peripheral.
   * @param  None.
   * @retval None
@@ -66,15 +81,15 @@ void Ws2812b_UpdateBuf(void)
 		{
 		  if(g_ws2812b_buf[i]&(0x800000>>j))
 			{
-			  g_ws2812b_bit[i*24+j+1] = 60;
+			  g_ws2812b_bit[i*24+j] = 60;
 			}
 			else
 			{
-			  g_ws2812b_bit[i*24+j+1] = 30;   //count period equal 90,the duty of code0 is 3060,code1 is 6030.
+			  g_ws2812b_bit[i*24+j] = 30;
 			}
 		}
 	}
-	Dma_Transfer_Trigger(TRANSFER_DATA_LENGTH);
+	Dma_Transfer_Trigger(WS2812B_LED_QUANTITY*24+1);
 	Pwm_Cmd(PWM_START);
 	while(!g_ws2812b_Tc_flag);
 	g_ws2812b_Tc_flag = 0;

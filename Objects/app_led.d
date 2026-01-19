@@ -31,3 +31,6 @@
 .\objects\app_led.o: .\StdLib_Drivers\stm32f10x_usart.h
 .\objects\app_led.o: .\StdLib_Drivers\stm32f10x_wwdg.h
 .\objects\app_led.o: .\StdLib_Drivers\misc.h
+.\objects\app_led.o: .\Peripheral\systick.h
+.\objects\app_led.o: .\Drivers\ws2812b_drv.h
+.\objects\app_led.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h

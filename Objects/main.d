@@ -36,3 +36,4 @@
 .\objects\main.o: .\Peripheral\uart_drv.h
 .\objects\main.o: .\Drivers\led_drv.h
 .\objects\main.o: Application\app_led.h
+.\objects\main.o: .\Drivers\ws2812b_drv.h

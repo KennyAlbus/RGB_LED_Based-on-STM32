@@ -31,3 +31,4 @@
 .\objects\uart_drv.o: Peripheral\timer_drv.h
 .\objects\uart_drv.o: Peripheral\uart_drv.h
 .\objects\uart_drv.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\uart_drv.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
