@@ -16,6 +16,8 @@ static uint8_t breath_dir;
 static uint8_t bright,color_mode;
 static uint8_t breath_times[7] = {2,3,2,1,10,5,3};
 static uint32_t base_color[3] = {0xff0000,0x00ff00,0x0000ff};
+static uint32_t pattern3_color[7] = 
+{0xff0000,0x00ff00,0x0000ff,0xffff00,0xff00ff,0x00ffff,0xffffff};
 const uint8_t step_value = WS2812B_STEP_VALUE;
 
 
@@ -156,6 +158,56 @@ void App_Ws2812b_Pattern2(void)
 	{
     Ws2812b_SetBuf(random_color);
 	}
+	Ws2812b_UpdateBuf();
+}
+
+void App_Ws2812b_Pattern3(void)
+{
+	static uint8_t led_cnt,color_index;
+	uint32_t randnum3 = rand()%0x1000000;
+	if(color_index < 7)
+	{
+    Ws2812b_SetLed(led_cnt,pattern3_color[color_index]);
+	}
+	else
+	{
+		Ws2812b_SetLed(led_cnt,randnum3);
+	}
+	Ws2812b_UpdateBuf();
+	led_cnt++;
+	if(led_cnt % 60 == 0)
+	{
+		led_cnt = 0;
+		color_index++;
+	}
+}
+
+void App_Ws2812b_Pattern4(void)
+{
+	Ws2812b_SetRandomBuf();
+	Ws2812b_UpdateBuf();
+}
+
+void App_Ws2812b_Pattern5(void)
+{
+	Ws2812b_BackwardWave();
+	Ws2812b_UpdateBuf();
+}
+
+void App_Ws2812b_Pattern6(void)
+{
+	Ws2812b_Snake();
+	Ws2812b_UpdateBuf();
+}
+
+/**
+  * @brief  Meteor trail effect
+  * @param  None.
+  * @retval None
+  */
+void App_Ws2812b_Pattern7(void)
+{
+	Ws2812b_MeteorTrail();
 	Ws2812b_UpdateBuf();
 }
 

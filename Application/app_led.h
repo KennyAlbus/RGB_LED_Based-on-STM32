@@ -4,6 +4,12 @@
 #include <stdint.h>
 
 
+void App_Ws2812b_Pattern7(void);
+void App_Ws2812b_Pattern6(void);
+void App_Ws2812b_Pattern5(void);
+void App_Ws2812b_Pattern4(void);
+void App_Ws2812b_Pattern3(void);
+void App_Ws2812b_Pattern2(void);
 void App_Ws2812b_Pattern1(void);
 void App_Brightness_Timer_handler(void);
 void App_Ws2812b_Color_Set(uint8_t green,uint8_t red,uint8_t blue);

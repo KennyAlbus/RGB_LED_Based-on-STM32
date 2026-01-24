@@ -30,7 +30,7 @@ static task_info_t task_list[TASK_NUM_MAX] =
 {
   {500,500,0,Bsp_Led_Timer_Handler},
 	{50,50,0,Duty_Cycle_Set},
-	{0,0,0,App_Ws2812b_Pattern1},
+	{20,20,0,App_Ws2812b_Pattern7},
 	{20,20,20,App_Brightness_Timer_handler},
 //	{2000,2000,0,Print_RandNum_timer_handler},
 	//add your task here.
