@@ -394,6 +394,11 @@
               <FileType>1</FileType>
               <FilePath>.\Application\app_led.c</FilePath>
             </File>
+            <File>
+              <FileName>app_serial.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Application\app_serial.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -420,16 +425,6 @@
               <FilePath>.\Peripheral\systick.c</FilePath>
             </File>
             <File>
-              <FileName>timer_drv.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Peripheral\timer_drv.c</FilePath>
-            </File>
-            <File>
-              <FileName>uart_drv.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Peripheral\uart_drv.c</FilePath>
-            </File>
-            <File>
               <FileName>pwm.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Peripheral\pwm.c</FilePath>
@@ -438,6 +433,16 @@
               <FileName>dma.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Peripheral\dma.c</FilePath>
+            </File>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Peripheral\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Peripheral\timer.c</FilePath>
             </File>
           </Files>
         </Group>

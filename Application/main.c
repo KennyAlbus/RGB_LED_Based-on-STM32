@@ -3,15 +3,16 @@
 #include "systick.h"
 #include "pwm.h"
 #include "dma.h"
-#include "timer_drv.h"
-#include "uart_drv.h"
+#include "timer.h"
+#include "uart.h"
 #include "led_drv.h"
 #include "app_led.h"
+#include "app_serial.h"
 #include "ws2812b_drv.h"
 
 
 #define     UART_BAUDRATE             (115200)
-#define     TASK_NUM_MAX              (4)
+#define     TASK_NUM_MAX              (3)
 #define     BUFFER_SIZE_MAX           (19*24+1)
 
 /*****   Global Variable    *****/
@@ -28,7 +29,6 @@ typedef struct
 
 static task_info_t task_list[TASK_NUM_MAX] = 
 {
-  {500,500,0,Bsp_Led_Timer_Handler},
 	{50,50,0,Duty_Cycle_Set},
 	{20,20,0,App_Ws2812b_Pattern7},
 	{20,20,20,App_Brightness_Timer_handler},
@@ -87,6 +87,7 @@ static void Task_Schedule_Handler(void)
 static void Init_Before_Driver(void)
 {
   Task_Schedule_Callback(Task_Flag_Update);
+	App_Serial_Init();
 }
 
 /**

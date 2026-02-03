@@ -1,5 +1,5 @@
-#ifndef __TIMER_DRV_H_
-#define __TIMER_DRV_H_
+#ifndef __TIMER_H_
+#define __TIMER_H_
 
 
 /*Callback Function define*/

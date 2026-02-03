@@ -127,6 +127,10 @@ void Ws2812b_Snake(void)
 	len++;
 }
 
+/**
+  * @brief  Set up meteor trail led effects.
+  * @retval None
+  */
 void Ws2812b_MeteorTrail(void)
 {
 	static uint8_t meteor,color_ctrl;
