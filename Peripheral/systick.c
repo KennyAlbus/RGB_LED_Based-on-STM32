@@ -2,14 +2,20 @@
 #include <stdio.h>
 
 
+typedef void (*p_key_scan_callback_t)(void);
 static uint64_t m_sys_run_time;
 
 static void (*p_TaskSchedule_Update)(void);
-
+static p_key_scan_callback_t key_scan_timer_handler = NULL;
 
 void Task_Schedule_Callback(void(*p_func)(void))
 {
   p_TaskSchedule_Update = p_func;
+}
+
+void Key_Scan_CbRegister(void(*p_func0)(void))
+{
+  key_scan_timer_handler = p_func0;
 }
 
 /**
@@ -22,6 +28,10 @@ void SysTick_Handler(void)
 {
   m_sys_run_time++;
 	p_TaskSchedule_Update();
+	if(key_scan_timer_handler != NULL)
+	{
+	  key_scan_timer_handler();
+	}
 }
 
 /**

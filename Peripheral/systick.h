@@ -5,6 +5,7 @@
 
 
 void Task_Schedule_Callback(void(*p_func)(void));
+void Key_Scan_CbRegister(void(*p_func0)(void));
 uint64_t Sys_RunTime_Get(void);
 void Systick_Init(void);
 

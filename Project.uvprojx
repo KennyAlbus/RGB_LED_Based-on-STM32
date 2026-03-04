@@ -414,6 +414,11 @@
               <FileType>1</FileType>
               <FilePath>.\Drivers\ws2812b_drv.c</FilePath>
             </File>
+            <File>
+              <FileName>key_drv.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\key_drv.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

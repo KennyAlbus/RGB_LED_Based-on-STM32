@@ -79,7 +79,7 @@ void USART1_IRQHandler(void)
 	if(USART_GetITStatus(m_uart_info.uart_no,USART_IT_RXNE) == SET)
 	{
 		p_serial_irq_handler();
-		USART_ClearITPendingBit(m_uart_info.uart_no,USART_IT_RXNE);
+		//USART_ClearITPendingBit(m_uart_info.uart_no,USART_IT_RXNE);
 	}
 }
 

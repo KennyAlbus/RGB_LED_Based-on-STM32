@@ -6,13 +6,14 @@
 #include "timer.h"
 #include "uart.h"
 #include "led_drv.h"
+#include "key_drv.h"
 #include "app_led.h"
 #include "app_serial.h"
 #include "ws2812b_drv.h"
 
 
 #define     UART_BAUDRATE             (115200)
-#define     TASK_NUM_MAX              (3)
+#define     TASK_NUM_MAX              (5)
 #define     BUFFER_SIZE_MAX           (19*24+1)
 
 /*****   Global Variable    *****/
@@ -29,10 +30,11 @@ typedef struct
 
 static task_info_t task_list[TASK_NUM_MAX] = 
 {
+	{0,0,0,NULL},
+	{0,0,0,App_Ws2812b_Mode_Switch},
 	{50,50,0,Duty_Cycle_Set},
-	{20,20,0,App_Ws2812b_Pattern7},
-	{20,20,20,App_Brightness_Timer_handler},
-//	{2000,2000,0,Print_RandNum_timer_handler},
+	{500,500,0,NULL},
+	{8,8,0,App_Brightness_Timer_handler},
 	//add your task here.
 };
 
@@ -68,13 +70,19 @@ static void Task_Schedule_Handler(void)
 	{
 		if(task_list[i].period == 0)
 		{
-		  task_list[i].p_func();
+			if(task_list[i].p_func != NULL)
+			{
+			  task_list[i].p_func();
+			}
 			continue;
 		}
 	  if(task_list[i].run)
 		{
 		  task_list[i].run = 0;
-			task_list[i].p_func();
+			if(task_list[i].p_func != NULL)
+			{
+			  task_list[i].p_func();
+			}
 		}
 	}
 }
@@ -87,6 +95,7 @@ static void Task_Schedule_Handler(void)
 static void Init_Before_Driver(void)
 {
   Task_Schedule_Callback(Task_Flag_Update);
+	Key_Scan_CbRegister(Key_Tick);
 	App_Serial_Init();
 }
 
@@ -101,6 +110,7 @@ static void Driver_Init(void)
 	Systick_Init();
 	Timer_Drv_Init();
   Led_Drv_Init();
+	Key_Drv_Init();
 	Rgb_Pwm_Init();
   Ws2812b_Init();
 	
